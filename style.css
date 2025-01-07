@@ -1,0 +1,79 @@
+﻿/* Baggrund */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87ceeb, #ffffff); /* Himmelblå til hvid overgang */
+    font-family: Arial, sans-serif;
+    color: black;
+    cursor: none; /* Skjul musens cursor */
+}
+
+/* Canvas */
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Score-visning */
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    z-index: 2;
+}
+
+/* Game Over-besked */
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    z-index: 3;
+}
+
+    #game-over h1 {
+        font-size: 48px;
+        color: red;
+    }
+
+    #game-over p {
+        font-size: 20px;
+        color: black;
+    }
+
+/* Animeret fugl */
+#animated-bird {
+    position: absolute;
+    width: 50px; /* Juster størrelsen på fuglen */
+    height: auto;
+    z-index: 2;
+    pointer-events: none; /* Ignorer musens interaktion */
+    animation: float 1.5s infinite ease-in-out; /* Tilføjer en subtil animation */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}

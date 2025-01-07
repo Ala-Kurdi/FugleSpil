@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyv Sydpå</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tilføjet CSS for score-display, game-over og fugleanimation */
+        #score-display {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            font-family: Arial, sans-serif;
+        }
+
+            #game-over h1 {
+                font-size: 48px;
+                color: red;
+            }
+
+            #game-over p {
+                font-size: 20px;
+                color: black;
+            }
+
+        #animated-bird {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            pointer-events: none; /* Ignorer klik */
+            z-index: 2; /* Sørg for at fuglen er over canvas */
+        }
+    </style>
+</head>
+<body>
+    <!-- Canvas til spillet -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Score-display -->
+    <div id="score-display" class="score">Score: 0</div>
+
+    <!-- Fugleanimation -->
+    <img id="animated-bird" src="images/bird.gif" alt="Bird" />
+
+    <!-- Game Over-besked -->
+    <div id="game-over" style="display: none;">
+        <h1>Game Over</h1>
+        <p>Score: <span id="final-score">0</span></p>
+        <p>High Score: <span id="high-score">0</span></p>
+    </div>
+
+    <!-- JavaScript-filen -->
+    <script src="script.js"></script>
+</body>
+</html>
